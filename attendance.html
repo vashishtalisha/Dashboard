@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Attendance Tracking</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Company Name</h1>
+        <nav>
+            <a href="index.html">Dashboard</a>
+            <a href="attendance.html" class="active">Attendance</a>
+        </nav>
+    </header>
+
+    <main>
+        <section>
+            <h2>Mark Attendance</h2>
+            <form id="attendance-form">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Team</th>
+                            <th>Member</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Repeat this block for each team member -->
+                        <tr>
+                            <td>Team A</td>
+                            <td>Alice Johnson (Leader)</td>
+                            <td>
+                                <select name="status" required>
+                                    <option value="">Select</option>
+                                    <option value="Present">Present</option>
+                                    <option value="Absent">Absent</option>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Team A</td>
+                            <td>Bob Smith (Lead 1)</td>
+                            <td>
+                                <select name="status" required>
+                                    <option value="">Select</option>
+                                    <option value="Present">Present</option>
+                                    <option value="Absent">Absent</option>
+                                </select>
+                            </td>
+                        </tr>
+                        <!-- Add other Team A leads similarly -->
+                        <!-- Team B Members -->
+                        <tr>
+                            <td>Team B</td>
+                            <td>Frank Miller (Leader)</td>
+                            <td>
+                                <select name="status" required>
+                                    <option value="">Select</option>
+                                    <option value="Present">Present</option>
+                                    <option value="Absent">Absent</option>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Team B</td>
+                            <td>Grace Lee (Lead 1)</td>
+                            <td>
+                                <select name="status" required>
+                                    <option value="">Select</option>
+                                    <option value="Present">Present</option>
+                                    <option value="Absent">Absent</option>
+                                </select>
+                            </td>
+                        </tr>
+                        <!-- Add other Team B leads similarly -->
+                        <!-- Repeat for Team C and Team D -->
+                        <!-- ... -->
+                    </tbody>
+                </table>
+                <button type="submit">Submit Attendance</button>
+            </form>
+            <div id="attendance-result"></div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Company Name. All rights reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
