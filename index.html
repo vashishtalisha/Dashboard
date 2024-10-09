@@ -4,87 +4,65 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login Page</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
     <style>
         body {
-            font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
-            margin: 0;
-            padding: 0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
+            background: linear-gradient(to right, #f06b6b, #f7f7f7); /* Adjust colors as desired */
         }
         .login-container {
             background-color: white;
-            padding: 30px;
-            border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            width: 300px;
-            text-align: center;
-        }
-        h2 {
-            margin-bottom: 20px;
-        }
-        input[type="text"], input[type="password"] {
-            width: 100%;
-            padding: 10px;
-            margin: 10px 0;
-            border: 1px solid #ccc;
-            border-radius: 4px;
-        }
-        .btn {
-            padding: 10px 15px;
-            color: white;
-            background-color: #007bff;
-            border: none;
-            border-radius: 5px;
-            width: 100%;
-            cursor: pointer;
-        }
-        .btn:hover {
-            background-color: #0056b3;
-        }
-        .error {
-            color: red;
-            margin-top: 10px;
+            border-radius: 15px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
         }
     </style>
 </head>
 <body>
+    <div class="container mt-5">
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <div class="card shadow login-container">
+                    <div class="card-body">
+                        <h2 class="text-center">Login</h2>
+                        <form onsubmit="return validateLogin()">
+                            <div class="form-group">
+                                <label for="username">Username</label>
+                                <input type="text" class="form-control" id="username" placeholder="Username" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="password">Password</label>
+                                <input type="password" class="form-control" id="password" placeholder="Password" required>
+                            </div>
+                            <button type="submit" class="btn btn-primary btn-block">Login</button>
+                            <p class="text-danger mt-2" id="error-message"></p>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
-<div class="login-container">
-    <h2>Login</h2>
-    <form onsubmit="return validateLogin()">
-        <input type="text" id="username" placeholder="Username" required>
-        <input type="password" id="password" placeholder="Password" required>
-        <button type="submit" class="btn">Login</button>
-        <p class="error" id="error-message"></p>
-    </form>
-</div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        function validateLogin() {
+            // Set the authorized username and password
+            const authorizedUsername = 'admin';
+            const authorizedPassword = 'password123';
 
-<script>
-    function validateLogin() {
-        // Set the authorized username and password
-        const authorizedUsername = 'admin';
-        const authorizedPassword = 'password123';
+            // Get the input values
+            const enteredUsername = document.getElementById('username').value;
+            const enteredPassword = document.getElementById('password').value;
 
-        // Get the input values
-        const enteredUsername = document.getElementById('username').value;
-        const enteredPassword = document.getElementById('password').value;
-
-        // Check if the entered credentials match the authorized ones
-        if (enteredUsername === authorizedUsername && enteredPassword === authorizedPassword) {
-            // Redirect to the index.html page
-            window.location.href = 'home.html';
-            return false; // Prevent form submission
-        } else {
-            // Show error message
-            document.getElementById('error-message').textContent = 'Invalid username or password.';
-            return false; // Prevent form submission
+            // Check if the entered credentials match the authorized ones
+            if (enteredUsername === authorizedUsername && enteredPassword === authorizedPassword) {
+                // Redirect to the index.html page
+                window.location.href = 'home.html';
+                return false; // Prevent form submission
+            } else {
+                // Show error message
+                document.getElementById('error-message').textContent = 'Invalid username or password.';
+                return false; // Prevent form submission
+            }
         }
-    }
-</script>
-
+    </script>
 </body>
 </html>
