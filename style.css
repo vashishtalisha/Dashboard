@@ -1,9 +1,6 @@
-/* General Styles */
 body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #f4f4f4;
+    font-family: 'Roboto', sans-serif;
+    background-color: #f0f0f0;
 }
 
 header {
@@ -11,10 +8,6 @@ header {
     color: #fff;
     padding: 10px 0;
     text-align: center;
-}
-
-header h1 {
-    margin: 0;
 }
 
 nav {
@@ -28,8 +21,8 @@ nav a {
     font-weight: bold;
 }
 
-nav a.active, nav a:hover {
-    text-decoration: underline;
+nav a:hover {
+    background-color: #444;
 }
 
 main {
@@ -46,7 +39,6 @@ h2 {
     margin-bottom: 20px;
 }
 
-/* Teams Overview */
 .teams-container {
     display: flex;
     flex-wrap: wrap;
@@ -54,12 +46,15 @@ h2 {
 }
 
 .team-card {
-    background-color: #fff;
+    background-color: #f5f5f5;
+    border-radius: 10px;
     padding: 15px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    flex: 1 1 calc(50% - 40px);
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: box-shadow 0.2s ease-in-out;
+}
+
+.team-card:hover {
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 }
 
 .team-card h3 {
@@ -75,7 +70,6 @@ h2 {
     margin-bottom: 5px;
 }
 
-/* Tables */
 table {
     width: 100%;
     border-collapse: collapse;
@@ -131,3 +125,56 @@ footer {
     width: 100%;
     bottom: 0;
 }
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #f0f0f0;
+    color: #333; /* Main text color */
+}
+
+header {
+    background-color: #3498db; /* Sky blue */
+    color: #fff;
+}
+
+nav a:hover {
+    background-color: #2980b9; /* Darker shade of blue */
+}
+
+.teams-container {
+    background-color: #f5f5f5;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.team-card {
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: box-shadow 0.2s ease-in-out;
+}
+
+.team-card:hover {
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.team-card h3 {
+    color: #3498db; /* Matching header color */
+}
+
+table {
+    border-collapse: collapse;
+    background-color: #f5f5f5;
+}
+
+th {
+    background-color: #3498db;
+    color: #fff;
+}
+
+th, td {
+    border: 1px solid #ddd;
+}
+
+/* Add more colors and styles as needed */
